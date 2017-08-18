@@ -1,0 +1,99 @@
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 182-641-922
+192.168.124.1 - - [17/Aug/2017 12:07:21] "GET / HTTP/1.1" 200 -
+192.168.124.1 - - [17/Aug/2017 12:07:21] "GET /static/favicon.ico HTTP/1.1" 404 -
+192.168.124.1 - - [17/Aug/2017 12:07:27] "POST /login HTTP/1.1" 200 -
+192.168.124.1 - - [17/Aug/2017 12:07:27] "GET /favicon.ico HTTP/1.1" 404 -
+192.168.124.1 - - [17/Aug/2017 12:07:27] "GET /favicon.ico HTTP/1.1" 404 -
+192.168.124.1 - - [17/Aug/2017 12:07:30] "POST /login HTTP/1.1" 200 -
+192.168.124.1 - - [17/Aug/2017 12:07:33] "POST /login HTTP/1.1" 200 -
+192.168.124.1 - - [17/Aug/2017 12:07:33] "GET /static/1.png HTTP/1.1" 304 -
+192.168.124.1 - - [17/Aug/2017 12:07:33] "GET /static/2.png HTTP/1.1" 304 -
+192.168.124.1 - - [17/Aug/2017 12:07:33] "GET /static/3.png HTTP/1.1" 304 -
+192.168.124.1 - - [17/Aug/2017 12:07:33] "GET /static/4.png HTTP/1.1" 304 -
+192.168.124.1 - - [17/Aug/2017 12:07:33] "GET /static/5.png HTTP/1.1" 304 -
+192.168.124.1 - - [17/Aug/2017 12:07:33] "GET /static/6.png HTTP/1.1" 304 -
+192.168.124.1 - - [17/Aug/2017 12:07:40] "GET /logout HTTP/1.1" 200 -
+192.168.124.1 - - [17/Aug/2017 12:07:45] "POST /login HTTP/1.1" 200 -
+192.168.124.1 - - [17/Aug/2017 12:07:50] "GET /register HTTP/1.1" 200 -
+192.168.124.1 - - [17/Aug/2017 12:07:55] "POST /register HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/zeppelin/PycharmProjects/development 2.0/flaskapp/views.py", line 68, in register
+    db.session.commit()
+  File "/usr/lib/python2.7/site-packages/sqlalchemy/orm/scoping.py", line 157, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 906, in commit
+    self.transaction.commit()
+  File "/usr/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 461, in commit
+    self._prepare_impl()
+  File "/usr/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 441, in _prepare_impl
+    self.session.flush()
+  File "/usr/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 2171, in flush
+    self._flush(objects)
+  File "/usr/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 2291, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/usr/lib/python2.7/site-packages/sqlalchemy/util/langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/usr/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 2255, in _flush
+    flush_context.execute()
+  File "/usr/lib/python2.7/site-packages/sqlalchemy/orm/unitofwork.py", line 389, in execute
+    rec.execute(self)
+  File "/usr/lib/python2.7/site-packages/sqlalchemy/orm/unitofwork.py", line 548, in execute
+    uow
+  File "/usr/lib/python2.7/site-packages/sqlalchemy/orm/persistence.py", line 181, in save_obj
+    mapper, table, insert)
+  File "/usr/lib/python2.7/site-packages/sqlalchemy/orm/persistence.py", line 799, in _emit_insert_statements
+    execute(statement, multiparams)
+  File "/usr/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 945, in execute
+    return meth(self, multiparams, params)
+  File "/usr/lib/python2.7/site-packages/sqlalchemy/sql/elements.py", line 263, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/usr/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1053, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/usr/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1189, in _execute_context
+    context)
+  File "/usr/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1402, in _handle_dbapi_exception
+    exc_info
+  File "/usr/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/usr/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1182, in _execute_context
+    context)
+  File "/usr/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+  File "build/bdist.linux-x86_64/egg/MySQLdb/cursors.py", line 174, in execute
+    self.errorhandler(self, exc, value)
+  File "build/bdist.linux-x86_64/egg/MySQLdb/connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+IntegrityError: (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry 'ted' for key 'PRIMARY'") [SQL: u'INSERT INTO users (username, password_hash, is_admin) VALUES (%s, %s, %s)'] [parameters: ('ted', 'pbkdf2:sha256:50000$RoJZJCE7$38a4d97a069321dde6e181010df89a6d2ea175daa190e0795ee6676876b836de', 0)]
+192.168.124.1 - - [17/Aug/2017 12:07:56] "GET /register?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+192.168.124.1 - - [17/Aug/2017 12:07:56] "GET /register?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+192.168.124.1 - - [17/Aug/2017 12:07:56] "GET /register?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+192.168.124.1 - - [17/Aug/2017 12:07:56] "GET /register?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.124.1 - - [17/Aug/2017 12:07:56] "GET /register?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+192.168.124.1 - - [17/Aug/2017 12:07:56] "GET /register?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+192.168.124.1 - - [17/Aug/2017 12:08:01] "GET /register HTTP/1.1" 200 -
+192.168.124.1 - - [17/Aug/2017 12:08:14] "GET /register HTTP/1.1" 200 -
+192.168.124.1 - - [17/Aug/2017 12:08:14] "GET /static/demo.css HTTP/1.1" 304 -
+192.168.124.1 - - [17/Aug/2017 12:08:17] "GET /register HTTP/1.1" 200 -
+192.168.124.1 - - [17/Aug/2017 12:08:17] "GET /static/demo.css HTTP/1.1" 304 -
+192.168.124.1 - - [17/Aug/2017 12:08:18] "GET /register HTTP/1.1" 200 -
+192.168.124.1 - - [17/Aug/2017 12:08:18] "GET /static/demo.css HTTP/1.1" 304 -
+192.168.124.1 - - [17/Aug/2017 12:08:21] "GET / HTTP/1.1" 200 -
